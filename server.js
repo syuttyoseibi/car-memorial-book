@@ -11,7 +11,7 @@ const port = 3000;
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 app.use(express.json({ limit: '50mb' }));
-app.use(express.static(path.join(__dirname, '.'))); // Changed static path
+app.use(express.static(path.join(__dirname, 'public'))); // Changed static path to 'public'
 
 app.post('/generate-story', async (req, res) => {
     try {
