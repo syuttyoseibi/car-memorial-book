@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>愛車メモリアルブック</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>愛車メモリアルブック</h1>
+        <p>君と走った道のりを、永遠の物語に。</p>
+    </header>
+
+    <main>
+        <div id="input-form">
+            <h2>あなたの愛車の物語を、AIが紡ぎます</h2>
+            <p>いくつかの質問に答えるだけで、AIがあなたと愛車の思い出を感動的な物語に仕立てます。</p>
+
+            <form id="memorial-form">
+                <section>
+                    <h3>Step 1: 愛車のプロフィール</h3>
+                    <label for="car-name">車種</label>
+                    <input type="text" id="car-name" placeholder="例: トヨタ・プリウス" required>
+                    
+                    <label for="car-nickname">愛車のニックネーム（任意）</label>
+                    <input type="text" id="car-nickname" placeholder="例: プリちゃん">
+                </section>
+
+                <section>
+                    <h3>Step 2: 思い出のインタビュー</h3>
+                    <label for="first-memory">この車との出会いや第一印象は？</label>
+                    <textarea id="first-memory" rows="3" placeholder="例: 免許を取って初めて買った車。少し古いけど、レトロな形が気に入った。" required></textarea>
+
+                    <label for="memorable-drive">一番の思い出のドライブは？</label>
+                    <textarea id="memorable-drive" rows="3" placeholder="例: 友達と海までドライブしたこと。車内から見た夕日が忘れられない。" required></textarea>
+
+                    <label for="favorite-song">車でよく聴いた曲は？</label>
+                    <input type="text" id="favorite-song" placeholder="例: スピッツのチェリー">
+
+                    <label for="final-words">最後に、愛車へ感謝の言葉をどうぞ</label>
+                    <textarea id="final-words" rows="3" placeholder="例: たくさんの場所へ連れて行ってくれてありがとう。君は最高の相棒だったよ。" required></textarea>
+                </section>
+
+                <section>
+                    <h3>Step 3: 思い出の写真</h3>
+                    <label for="car-photo">思い出の写真（3枚まで選択可）</label>
+                    <input type="file" id="car-photo" accept="image/*" multiple>
+                    <p class="file-instruction">※ Ctrlキー（MacはCommandキー）を押しながら複数選択できます。</p>
+                    <div id="image-preview" class="image-preview-grid"></div>
+                </section>
+
+                <button type="submit">AIにメモリアルブックの作成を依頼する</button>
+            </form>
+        </div>
+
+        <div id="memorial-book-container" class="hidden">
+            <!-- ここにAIが生成したメモリアルブックが表示されます -->
+        </div>
+
+        <div id="download-area" class="hidden">
+            <button id="download-pdf">PDFとしてダウンロード</button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

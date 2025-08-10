@@ -1,0 +1,276 @@
+body {
+    font-family: 'Helvetica Neue', 'Arial', 'Hiragino Sans', 'Meiryo', sans-serif;
+    line-height: 1.8;
+    color: #555;
+    background-color: #fdfaf4;
+    margin: 0;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    border-bottom: 2px dashed #d3c4a8;
+    padding-bottom: 20px;
+}
+
+header h1 {
+    font-family: 'Georgia', serif;
+    color: #8c7851;
+    margin-bottom: 5px;
+}
+
+header p {
+    color: #a08c67;
+    font-size: 1em;
+}
+
+main {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+#input-form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+}
+
+h2 {
+    text-align: center;
+    color: #8c7851;
+    font-family: 'Georgia', serif;
+    margin-bottom: 10px;
+}
+
+#input-form > p {
+    text-align: center;
+    font-size: 0.9em;
+    margin-bottom: 30px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+section h3 {
+    font-family: 'Georgia', serif;
+    color: #a08c67;
+    border-bottom: 1px solid #e0d7c1;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #666;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Important */
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    border-color: #a08c67;
+    box-shadow: 0 0 5px rgba(160, 140, 103, 0.5);
+    outline: none; /* Remove default outline */
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #8c7851;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #a08c67;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Memorial Book Styles */
+#memorial-book-container {
+    margin-top: 40px;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border: 5px solid #e0d7c1;
+    animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.memorial-title {
+    text-align: center;
+    font-family: 'Georgia', serif;
+    font-size: 2em;
+    color: #8c7851;
+    margin-bottom: 10px;
+}
+
+.memorial-subtitle {
+    text-align: center;
+    color: #a08c67;
+    margin-bottom: 30px;
+}
+
+.memorial-photo {
+    width: 100%;
+    display: block;
+    border-radius: 4px;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.memorial-story p {
+    text-indent: 1em; /* Add indentation to each paragraph */
+    margin-bottom: 1.5em;
+}
+
+.memorial-story .highlight {
+    font-weight: bold;
+    color: #8c7851;
+}
+
+/* Download Button Styles */
+#download-area {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#download-pdf {
+    width: auto;
+    background-color: #6c757d; /* A different color */
+    font-size: 1em;
+    padding: 10px 20px;
+}
+
+#download-pdf:hover {
+    background-color: #5a6268;
+}
+
+/* File Instruction and Preview Styles */
+.file-instruction {
+    font-size: 0.85em;
+    color: #888;
+    text-align: center;
+    margin-top: -15px;
+    margin-bottom: 15px;
+}
+
+#image-preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    justify-content: center;
+    border: 1px dashed #ccc;
+    padding: 10px;
+    min-height: 50px;
+    align-items: center;
+}
+
+#image-preview img {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #eee;
+}
+
+/* Image Gallery Display Styles (for generated book) */
+#image-gallery-display {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px; /* Space between images */
+    margin-bottom: 30px;
+}
+
+#image-gallery-display .memorial-photo {
+    width: 150px; /* Fixed width for gallery thumbnails */
+    height: 100px; /* Fixed height for gallery thumbnails */
+    object-fit: cover; /* Crop images to fit */
+    border: 2px solid #eee;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+@media print {
+    /* Disable animation for print to prevent blank PDF */
+    #memorial-book-container {
+        animation: none !important;
+    }
+
+    /* Revert to web styles for print, allowing natural page breaks */
+    body {
+        font-size: 1em; /* Default font size */
+        line-height: 1.8; /* Default line spacing */
+        padding: 20px; /* Default padding */
+    }
+
+    #memorial-book-container {
+        padding: 40px; /* Default padding */
+        border: 5px solid #e0d7c1; /* Default border */
+    }
+
+    .memorial-title {
+        font-size: 2em; /* Default title size */
+        margin-bottom: 10px; /* Default margin */
+    }
+
+    .memorial-subtitle {
+        font-size: 1em; /* Default subtitle size */
+        margin-bottom: 30px; /* Default margin */
+    }
+
+    .memorial-photo {
+        max-width: 500px; /* Default image size */
+        margin: 0 auto 30px auto; /* Default margin */
+        page-break-inside: avoid; /* Prevent images from breaking across pages */
+    }
+
+    #image-gallery-display {
+        gap: 15px; /* Default gap */
+        margin-bottom: 30px; /* Default margin */
+        page-break-after: avoid; /* Keep text close to images */
+    }
+
+    .memorial-story p {
+        margin-bottom: 1.5em; /* Default paragraph spacing */
+        page-break-inside: auto; /* Allow page breaks inside paragraphs */
+        orphans: 3; /* Minimum number of lines at the bottom of a page */
+        widows: 3; /* Minimum number of lines at the top of a page */
+    }
+}
