@@ -80,6 +80,12 @@ app.post('/download-pdf', async (req, res) => {
             </html>
         `;
 
+        // --- DEBUGGING LOGS START ---
+        console.log("--- PDF Generation Debug ---");
+        console.log("Received Payload:", { title, subtitle, storyHtml: storyHtml.substring(0, 100) + "...", imageDataUrls: imageDataUrls.length + " images" });
+        console.log("Full HTML (first 500 chars):", fullHtml.substring(0, 500) + "...");
+        // --- DEBUGGING LOGS END ---
+
         const browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox'] });
         const page = await browser.newPage();
         await page.setContent(fullHtml, { waitUntil: 'load', timeout: 0 });

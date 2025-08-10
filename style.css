@@ -274,3 +274,36 @@ button:hover {
         widows: 3; /* Minimum number of lines at the top of a page */
     }
 }
+
+@media (max-width: 768px) {
+    main {
+        padding: 0 10px; /* Reduce horizontal padding on small screens */
+    }
+
+    #input-form {
+        padding: 20px; /* Reduce form padding */
+    }
+
+    h1 {
+        font-size: 1.8em; /* Adjust header font size */
+    }
+
+    h2 {
+        font-size: 1.5em; /* Adjust section title font size */
+    }
+
+    button {
+        font-size: 1em; /* Adjust button font size */
+        padding: 12px;
+    }
+
+    #image-preview img {
+        width: 60px; /* Smaller preview images */
+        height: 45px;
+    }
+
+    #image-gallery-display .memorial-photo {
+        width: 100px; /* Smaller displayed images */
+        height: 75px;
+    }
+}
