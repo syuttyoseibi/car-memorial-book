@@ -106,7 +106,7 @@ app.post('/download-pdf', async (req, res) => {
         console.error("PDF Generation Error (Final Build):", error);
         res.status(500).send('PDFの生成に失敗しました。');
     }
-});
+}); // Added dummy comment for Vercel redeploy
 
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
