@@ -3,6 +3,7 @@ const express = require('express');
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 const puppeteer = require('puppeteer');
 const fs = require('fs');
+const path = require('path'); // Added path module
 
 const app = express();
 const port = 3000;
@@ -10,7 +11,7 @@ const port = 3000;
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 app.use(express.json({ limit: '50mb' }));
-app.use(express.static('.'));
+app.use(express.static(path.join(__dirname, '.'))); // Changed static path
 
 app.post('/generate-story', async (req, res) => {
     try {
