@@ -89,7 +89,7 @@ app.post('/download-pdf', async (req, res) => {
 
         const browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox'] });
         const page = await browser.newPage();
-        await page.setContent(fullHtml, { waitUntil: 'load', timeout: 0 });
+        await page.setContent(fullHtml, { waitUntil: 'networkidle0', timeout: 0 });
         const pdf = await page.pdf({
             format: 'A4', // Revert to A4 format
             printBackground: true,

@@ -227,51 +227,46 @@ button:hover {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
+
 @media print {
-    /* Disable animation for print to prevent blank PDF */
+    /* 印刷時のアニメーションを無効化 */
     #memorial-book-container {
         animation: none !important;
+        box-shadow: none; /* 影をなくしてスッキリさせる */
+        border: 5px solid #e0d7c1;
+        padding: 20px;
     }
 
-    /* Revert to web styles for print, allowing natural page breaks */
     body {
-        font-size: 1em; /* Default font size */
-        line-height: 1.8; /* Default line spacing */
-        padding: 20px; /* Default padding */
+        background-color: #fff; /* 背景を白に設定 */
     }
 
-    #memorial-book-container {
-        padding: 40px; /* Default padding */
-        border: 5px solid #e0d7c1; /* Default border */
-    }
-
-    .memorial-title {
-        font-size: 2em; /* Default title size */
-        margin-bottom: 10px; /* Default margin */
-    }
-
-    .memorial-subtitle {
-        font-size: 1em; /* Default subtitle size */
-        margin-bottom: 30px; /* Default margin */
-    }
-
-    .memorial-photo {
-        max-width: 500px; /* Default image size */
-        margin: 0 auto 30px auto; /* Default margin */
-        page-break-inside: avoid; /* Prevent images from breaking across pages */
-    }
-
+    /* 画像ギャラリーをWebページと同じように横並びにする */
     #image-gallery-display {
-        gap: 15px; /* Default gap */
-        margin-bottom: 30px; /* Default margin */
-        page-break-after: avoid; /* Keep text close to images */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px; /* 画像間のスペース */
+        margin-bottom: 20px;
+        page-break-inside: avoid; /* ギャラリーがページをまたいで分割されるのを防ぐ */
+    }
+
+    /* ギャラリー内の画像のサイズを調整 */
+    #image-gallery-display .memorial-photo {
+        width: 150px;
+        height: 100px;
+        object-fit: cover; /* 画像をトリミングしてサイズを統一 */
+        border: 1px solid #eee;
     }
 
     .memorial-story p {
-        margin-bottom: 1.5em; /* Default paragraph spacing */
-        page-break-inside: auto; /* Allow page breaks inside paragraphs */
-        orphans: 3; /* Minimum number of lines at the bottom of a page */
-        widows: 3; /* Minimum number of lines at the top of a page */
+        orphans: 3; /* ページの最後に段落の1行だけ残らないようにする */
+        widows: 3;  /* ページの先頭に段落の1行だけ来ないようにする */
+    }
+
+    /* PDFにはダウンロードボタンは不要なので非表示に */
+    #download-area {
+        display: none;
     }
 }
 
